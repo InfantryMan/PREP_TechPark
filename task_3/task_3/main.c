@@ -52,15 +52,14 @@ int main (int argc, char *argv[]) {
           node_insert(head, node);
         else {
           free(node);
-         // printf("Memory freed for %d\n", num);
+          //printf("Memory freed for %d\n", num);
         }
         break;
       case '-':
-        if (head != NULL) {
-          node_found = node_search(head, num);
-          if (node_found != NULL)
-            while (node_delete(&head,node_found))
-              node_found = node_search(head, num);
+        node_found = node_search(head,num);
+        while (node_found) {
+          node_delete(&head, node_found);
+          node_found = node_search(head,num);
         } 
         break;
       case '?':

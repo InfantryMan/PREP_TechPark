@@ -1,6 +1,8 @@
 #include "list.h"
 
 Node *node_search(Node *head, int val) {
+  if (head == NULL)
+    return NULL;
   Node *cur_node = head;
   while (cur_node->val != val){
     if (cur_node->next == NULL)
@@ -22,28 +24,28 @@ void node_insert(Node *head, Node *node) {
   tail->next = node;
 }
 
-char node_delete(Node **head, Node *node) { 
+void node_delete(Node **head, Node *node) { 
   if (*head == node && (*head)->next == NULL) {
-   // printf("Memory freed in node_delete in head for %d\n", node->val);
+    //printf("Memory freed in node_delete in last head for %d\n", node->val);
     free(*head);
     *head = NULL;
-    return 0;
+    return;
   }
   if (*head == node) {
-    Node* new_head = *head;
+    Node *new_head = *head;
     *head = (*head)->next;
     //printf("Memory freed in node_delete in head for %d\n", node->val);
     free(new_head);
-    return 1;
+    return;
   }
   if (node->next == NULL) {
     Node *cur_node = *head;
     while (cur_node->next->next != NULL)
       cur_node = cur_node->next;
     cur_node->next = NULL;
-   // printf("Memory freed in node_delete in tail for %d\n", node->val);
+    //printf("Memory freed in node_delete in tail for %d\n", node->val);
     free(node);
-    return 0;
+    return;
   }
   //printf("Memory freed in node_delete inside for %d\n", node->val);
   Node *node_next = node->next;
@@ -51,7 +53,7 @@ char node_delete(Node **head, Node *node) {
   node->stock = node_next->stock;
   node->next = node_next->next;
   free(node_next);
-  return 1;
+  return;
 }
 
 void node_print(Node *head) {
