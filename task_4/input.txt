@@ -1,0 +1,6 @@
+RK BMSTU 70 400 2-aya_Baumanskaya_dom_5 +7499263-63-91
+IU BMSTU 100 600 2-aya_Baumanskaya_dom_5 +7499263-63-91
+MT BMSTU 80 530 2-aya_Baumanskaya_dom_5 +7499263-63-91
+SM BMSTU 90 567 2-aya_Baumanskaya_dom_5 +7499263-63-91
+MechMat MSU 230 845 Leninskie_gory_dom_1 +7495939-10-00
+FIHT MIPT 75 345 Kerchenskaya_dom_1A  +7495408-42-00
